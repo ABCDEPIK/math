@@ -3,12 +3,17 @@ import streamlit as st
 # Streamlit 앱의 제목 설정
 st.title('음악에서 찾는 분수')
 
-# 분자와 분모에 대한 선택 옵션 설정
-numerator_options = [1, 2, 3]
-denominator_options = [2, 4, 8, 16]
+# 선택할 탭 목록
+tabs = ["음표와 분수의 관계 이해", "분수를 입력하여 해당 음표의 길이를 확인해보세요", "Google Song Maker로 이동하기"]
 
-# Streamlit 사이드바에 탭 추가
-selected_tab = st.sidebar.selectbox("탭을 선택하세요", ["음표와 분수의 관계 이해", "분수를 입력하여 해당 음표의 길이를 확인해보세요", "Google Song Maker로 이동하기"])
+# 선택된 탭을 저장할 변수
+selected_tab = None
+
+# 사이드바에 탭에 해당하는 텍스트 링크 표시
+st.sidebar.title('탭을 선택하세요')
+for tab in tabs:
+    if st.sidebar.button(tab):
+        selected_tab = tab
 
 # 선택된 탭에 따라 내용 표시
 if selected_tab == "음표와 분수의 관계 이해":
@@ -18,6 +23,10 @@ if selected_tab == "음표와 분수의 관계 이해":
     st.write("이런 식으로 다른 분수들은 다른 박자를 나타냅니다.")
 elif selected_tab == "분수를 입력하여 해당 음표의 길이를 확인해보세요":
     st.title('분수를 입력하여 해당 음표의 길이를 확인해보세요')
+
+    # 분자와 분모에 대한 선택 옵션 설정
+    numerator_options = [1, 2, 3]
+    denominator_options = [2, 4, 8, 16]
 
     # 분자와 분모 선택
     numerator_input = st.selectbox('분자를 선택하세요', numerator_options)
