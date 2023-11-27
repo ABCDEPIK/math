@@ -7,13 +7,7 @@ st.title('음악에서 찾는 분수')
 tabs = ["음표와 분수의 관계 이해", "분수를 입력하여 해당 음표의 길이를 확인해보세요", "Google Song Maker로 이동하기"]
 
 # 선택된 탭을 저장할 변수
-selected_tab = None
-
-# 사이드바에 탭에 해당하는 텍스트 링크 표시
-st.sidebar.title('탭을 선택하세요')
-for tab in tabs:
-    if st.sidebar.button(tab):
-        selected_tab = tab
+selected_tab = st.sidebar.selectbox("탭을 선택하세요", tabs)
 
 # 선택된 탭에 따라 내용 표시
 if selected_tab == "음표와 분수의 관계 이해":
@@ -41,7 +35,7 @@ elif selected_tab == "분수를 입력하여 해당 음표의 길이를 확인�
     if st.button('음표 길이 확인'):
         note_duration = fraction_to_duration(numerator_input, denominator_input)
         st.write(f"선택한 {numerator_input}/{denominator_input} 분수는 {note_duration}분음표에 해당됩니다.")
-elif selected_tab == "Google Song Maker로 이동하기":
+else:
     st.title('Google Song Maker로 이동하기')
     st.write("Google Song Maker로 이동하려면 아래 링크를 클릭하세요:")
     google_songmaker_link = "https://musiclab.chromeexperiments.com/Song-Maker/"
