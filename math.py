@@ -41,7 +41,7 @@ elif selected_tab == "분수를 입력하여 해당 음표의 길이를 확인�
     if st.button('음표 길이 확인'):
         note_duration = fraction_to_duration(numerator_input, denominator_input)
         st.write(f"선택한 {numerator_input}/{denominator_input} 분수는 {note_duration}분음표에 해당됩니다.")
-else:
+elif selected_tab == "Google Song Maker로 이동하기":
     st.title('Google Song Maker로 이동하기')
     st.write("Google Song Maker로 이동하려면 아래 링크를 클릭하세요:")
     google_songmaker_link = "https://musiclab.chromeexperiments.com/Song-Maker/"
