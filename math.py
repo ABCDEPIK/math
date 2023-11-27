@@ -1,7 +1,7 @@
 import streamlit as st
 
 # Streamlit 앱의 제목 설정
-st.title('음표와 분수 관계 이해하기')
+st.title('음악에서 찾는 분수')
 
 # 음표와 분수 관계 설명
 st.write("음표와 분수의 관계를 이해해봅시다.")
